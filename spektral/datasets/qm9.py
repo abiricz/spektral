@@ -56,7 +56,7 @@ def load_data(return_type='numpy', nf_keys=None, ef_keys=None, auto_pad=True,
         return data, labels
     else:
         # Convert to Networkx
-        data = [sdf_to_nx(_) for _ in data]
+        data = [sdf_to_nx(_, keep_hydrogen=True) for _ in data]
 
     if return_type is 'numpy':
         if nf_keys is not None:
